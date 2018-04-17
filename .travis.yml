@@ -4,5 +4,3 @@ python:
 install:
   - pip install Flask
   - pip install pybtex
-script:
-  - pytest

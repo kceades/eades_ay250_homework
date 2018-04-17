@@ -159,7 +159,7 @@ def parse_author(name):
 	"""
 	split = name.split(', ')
 	first = split[1]
-	last = split[0][1:-1]
+	last = split[0][1:-1] # the last name has an odd character on the front and end
 	return first + ' ' + last
 
 if __name__ == '__main__':

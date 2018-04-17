@@ -4,3 +4,5 @@ python:
 install:
   - pip install Flask
   - pip install pybtex
+script:
+  - python hw_8/hw8tests.py

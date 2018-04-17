@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang='en-US'>
+<head>
+	<title>Failed upload!</title>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+</head>
+
+<body>
+	<a href="{{ url_for('index') }}">Return home</a>
+	<p>Uh oh! Your upload was not successful. Likely reasons are:
+		<ol>
+			<li>You didn't provide a file</li>
+			<li>The provided file wasn't a '.bib' file</li>
+			<li>You didn't provide a name for the collection</li>
+		</ol>
+	</p>
+	<a href="{{ url_for('upload') }}">Try to upload another bib file</a>
+</body>
+
+</html>

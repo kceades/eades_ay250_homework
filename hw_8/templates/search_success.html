@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang='en-US'>
+<head>
+	<title>Successful search!</title>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+</head>
+
+<body>
+	<a href="{{ url_for('index') }}">Return home</a>
+	<p>Success! Your query of "{{ query }}" resulted in the following:
+		<ol>
+			{% for result in results_dict %}
+			<li><ul>
+				<li>Key: {{ result['Key'] }}</li>
+				<li>Author: {{ result['Author'] }}</li>
+				<li>Journal: {{ result['Journal'] }}</li>
+				<li>Pages: {{ result['Pages'] }}</li>
+				<li>Year: {{ result['Year'] }}</li>
+				<li>Title: {{ result['Title'] }}</li>
+				<li>Collection: {{ result['Collection'] }}</li>
+			</ul></li>
+			{% endfor %}
+		</ol>
+	</p>
+	<a href="{{ url_for('search') }}">Try another search</a>
+</body>
+
+</html>

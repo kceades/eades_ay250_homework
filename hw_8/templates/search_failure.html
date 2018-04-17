@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html lang='en-US'>
+<head>
+	<title>Failed search!</title>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+</head>
+
+<body>
+	<a href="{{ url_for('index') }}">Return home</a>
+	<p>Oh no! Your query of "{{ query }}" returned nothing or there was another failure along the way. If you haven't uploaded anything on the upload page yet, then the query will error because there is nothing to query against.</p>
+	<a href="{{ url_for('search') }}">Try another search</a>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang='en-US'>
+<head>
+	<title>Bibliography Manager: Upload</title>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+</head>
+
+<body>
+	<a href="{{ url_for('index') }}">Return home</a>
+	<p>If desired, please upload a collection by providing the name of the collection its corresponding '.bib' file to be uploaded in the form below.</p>
+	<form action="{{ url_for('upload') }}" method=post enctype=multipart/form-data>
+		<p>Collection Name:</p>
+		<input type=text name=collection>
+		<p>'.bib' file:</p>
+		<input type=file name=file>
+		<input type=submit value=Upload>
+	</form>
+</body>
+
+</html>

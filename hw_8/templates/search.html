@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang='en-US'>
+<head>
+	<title>Bibliography Manager: Search</title>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+</head>
+
+<body>
+	<a href="{{ url_for('index') }}">Return home</a>
+	<p>If desired, please insert a sql-like command in the box below, knowing that the available fields in the table are:
+		<ul>
+			<li>Key</li>
+			<li>Authors</li>
+			<li>Journal</li>
+			<li>Pages</li>
+			<li>Year</li>
+			<li>Title</li>
+			<li>Collection</li>
+		</ul>
+	</p>
+	<p>Note that all the sql-like command that you enter below will go after the "WHERE" part of the query. That is, the query will be</p>
+	<p>SELECT * FROM Data WHERE {}</p>
+	<p>where of course the {} is what you enter in the box below.</p>
+	<p>Tips:
+		<ul>
+			<li>The "Authors" field is a comma separated list of authors</li>
+			<li>All fields except for "Year" are of type TEXT (i.e., strings) whereas "YEAR" is of type INTEGER.</li>
+			<li>Different conditions should be separated by AND or OR</li>
+			<li>LIKE can be used in combiation with wildcards (e.g., "Authors LIKE %Bob%")</li>
+			<li>"%" is a one or more character wildcard</li>
+			<li>"_" is a single character wildcard</li>
+		</ul>
+	</p>
+	<form action="{{ url_for('search') }}" method=post>
+		<p>Query string (what follows the WHERE in the sql query):</p>
+		<input type=text name=query>
+		<input type=submit value=Search>
+	</form>
+</body>
+
+</html>

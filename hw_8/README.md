@@ -20,3 +20,8 @@ in your terminal. The important pieces are the templates folder (and all templat
 <li>It may have just been some issue with the test data, but right now Journal doesn't render that nicely. It appears as an abbreviation I suspect.</li>
 <li>Only .bib files are allowed in uploading, otherwise it will route to the failure page.</li>
 </ul>
+
+
+<h2>Note on the code coverage and CI part</h2>
+
+I tried to implement the CI and Codecov portions, but I couldn't figure out how to test Flask apps since I kept running into error messages saying something to the effect of no context was provided when I tried to run individual functions. I think this is because the render_template functions require an app to be running and have appropriate routing, but I'm not sure how to circumvent this for testing purposes.
